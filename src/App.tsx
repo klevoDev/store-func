@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import {ShopItemFuncComponent} from "./components/shop-item-func/shop-item-func-component";
+import {item} from "./data/data";
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='container'>
+        <div className='background-element'></div>
+        <div className='highlight-window'>
+          <div className='highlight-overlay'></div>
+        </div>
+        <div className='window'>
+          <ShopItemFuncComponent
+            brand={item.brand}
+            title={item.title}
+            description={item.description}
+            descriptionFull={item.descriptionFull}
+            price={item.price}
+            currency={item.currency}
+          />
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
